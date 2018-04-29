@@ -1,21 +1,41 @@
 package com.example.kakaotalk3;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    FloatingActionButton fab;
     ViewPager viewPager;
+    EditText editText;
     ImageButton imageButton,imageButton2, imageButton3,imageButton4,imageButton5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fab = (FloatingActionButton)findViewById(R.id.fab);
+        fab.setImageResource(R.drawable.search);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"기능 미구현",Toast.LENGTH_SHORT).show();
+            }
+        });
+        fab.bringToFront();
+
+        editText = (EditText)findViewById(R.id.editText);
 
         viewPager = (ViewPager)findViewById(R.id.viewPager);
 
