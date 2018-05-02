@@ -12,11 +12,13 @@ import android.support.v7.widget.LinearLayoutCompat;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    FrameLayout frameLayout;
     FloatingActionButton fab;
     ViewPager viewPager;
     EditText editText;
@@ -25,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        frameLayout = findViewById(R.id.frameLayout);
+
         fab = (FloatingActionButton)findViewById(R.id.fab);
         fab.setImageResource(R.drawable.search);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -33,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"기능 미구현",Toast.LENGTH_SHORT).show();
             }
         });
-        fab.bringToFront();
+
+        frameLayout.bringChildToFront(fab);
 
         editText = (EditText)findViewById(R.id.editText);
 

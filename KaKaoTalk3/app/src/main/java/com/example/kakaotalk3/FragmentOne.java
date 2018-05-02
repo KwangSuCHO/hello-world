@@ -15,7 +15,8 @@ import android.widget.ScrollView;
 
 public class FragmentOne extends Fragment {
     ImageView imageView;
-    ListView listView;
+//    ListView listView;
+    NonScrollListView listView;
     ScrollView scrollView;
     public FragmentOne(){
 
@@ -30,13 +31,13 @@ public class FragmentOne extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_1, container,false);
+
         scrollView = view.findViewById(R.id.scrollView);
         imageView = view.findViewById(R.id.imageView);
         imageView.setImageResource(R.drawable.person);
         listView = view.findViewById(R.id.listView);
-
-
 
         ListAdapter listAdapter = new ListAdapter();
         for(int i=0; i<10; i++) {
@@ -95,6 +96,5 @@ public class FragmentOne extends Fragment {
 
         return view;
     }
-
 
 }
