@@ -93,13 +93,53 @@
             android:layout_height="match_parent">
 
         </android.support.v4.view.ViewPager>
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
+        <!--<android.support.design.widget.FloatingActionButton-->
+            <!--android:id="@+id/fab"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom|end"-->
+            <!--android:layout_margin="16dp"-->
+            <!--android:focusableInTouchMode="false" />-->
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fam"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
-            android:focusableInTouchMode="false" />
+            android:layout_margin="16dp">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_qr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_edit"
+                app:fab_label="QR코드"/>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_add"
+                app:fab_label="연락처로 추가"/>
+
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_delete"
+                app:fab_label="카카오톡 ID로 추가"/>
+
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_delete"
+                app:fab_label="추천친구"/>
+
+        </com.github.clans.fab.FloatingActionMenu>
 
     </FrameLayout>
 
