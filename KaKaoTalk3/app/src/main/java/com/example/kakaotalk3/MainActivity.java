@@ -2,7 +2,8 @@ package com.example.kakaotalk3;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+//import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -17,9 +18,13 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.github.clans.fab.FloatingActionMenu;
+import com.github.clans.fab.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity {
+    FloatingActionMenu fam;
     FrameLayout frameLayout;
-    FloatingActionButton fab;
+    FloatingActionButton fab_qr, fab_address, fab_id, fab_recommend;
     ViewPager viewPager;
     EditText editText;
     ImageButton imageButton,imageButton2, imageButton3,imageButton4,imageButton5;
@@ -30,16 +35,36 @@ public class MainActivity extends AppCompatActivity {
 
         frameLayout = findViewById(R.id.frameLayout);
 
-        fab = (FloatingActionButton)findViewById(R.id.fab);
-        fab.setImageResource(R.drawable.search);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab_qr = (FloatingActionButton)findViewById(R.id.fab_qr);
+        fab_address = (FloatingActionButton) findViewById(R.id.fab_address);
+        fab_id = (FloatingActionButton)findViewById(R.id.fab_id);
+        fab_recommend = (FloatingActionButton)findViewById(R.id.fab_recommend);
+        fam = (FloatingActionMenu)findViewById(R.id.fam);
+
+        fam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"기능 미구현",Toast.LENGTH_SHORT).show();
+                if (fam.isOpened()){
+                    fam.close(true);
+                }
             }
         });
 
-        frameLayout.bringChildToFront(fab);
+        fab_qr.setOnClickListener(onFabClick());
+        fab_address.setOnClickListener(onFabClick());
+        fab_id.setOnClickListener(onFabClick());
+        fab_recommend.setOnClickListener(onFabClick());
+
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                Toast.makeText(getApplicationContext(),"기능 미구현",Toast.LENGTH_SHORT).show();
+//                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+
+        frameLayout.bringChildToFront(fam);
 
         editText = (EditText)findViewById(R.id.editText);
 
@@ -105,6 +130,15 @@ public class MainActivity extends AppCompatActivity {
         public int getCount() {
             return 5;
         }
+    }
+    private View.OnClickListener onFabClick(){
+        return new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                    Toast.makeText(getApplicationContext(),"기능 미구현",Toast.LENGTH_SHORT).show();
+                }
+
+        };
     }
 
 }
