@@ -8,13 +8,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button add, subtract, multiply, divide, one, two, three, four, five, six, seven, eight, nine, zero, zero_2, equal;
+    Button add, subtract, multiply, divide, one, two, three, four, five, six, seven, eight, nine, zero, zero_2, equal,del;
     TextView result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        del = findViewById(R.id.del);
 
         add = (Button) findViewById(R.id.add);
         subtract = (Button)findViewById(R.id.subtract);
@@ -36,32 +38,31 @@ public class MainActivity extends AppCompatActivity {
         zero = findViewById(R.id.zero);
         zero_2 = findViewById(R.id.zero_2);
 
-
         View.OnClickListener numberButton = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch(v.getId()){
-                    case R.id.one: result.setText("1");
+                    case R.id.one: result.append("1");
                         break;
-                    case R.id.two: result.setText("2");
+                    case R.id.two: result.append("2");
                         break;
-                    case R.id.three: result.setText("3");
+                    case R.id.three: result.append("3");
                         break;
-                    case R.id.four: result.setText("4");
+                    case R.id.four: result.append("4");
                         break;
-                    case R.id.five: result.setText("5");
+                    case R.id.five: result.append("5");
                         break;
-                    case R.id.six: result.setText("6");
+                    case R.id.six: result.append("6");
                         break;
-                    case R.id.seven: result.setText("7");
+                    case R.id.seven: result.append("7");
                         break;
-                    case R.id.eight: result.setText("8");
+                    case R.id.eight: result.append("8");
                         break;
-                    case R.id.nine: result.setText("9");
+                    case R.id.nine: result.append("9");
                         break;
-                    case R.id.zero: result.setText("0");
+                    case R.id.zero: result.append("0");
                         break;
-                    case R.id.zero_2: result.setText("00");
+                    case R.id.zero_2: result.append("00");
                         break;
                     default:
                         Toast.makeText(getApplicationContext(),"기능미구현",Toast.LENGTH_SHORT).show();
@@ -69,6 +70,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+
+        del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String value = result.getText().toString();
+//
+//                if(value == ""){
+//                    Toast.makeText(MainActivity.this, "지울 숫자가 없습니다.", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    result.setText(value.substring(0,value.length()-1));
+//                }
+                Toast.makeText(getApplicationContext(),"기능 미구현",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         add.setOnClickListener(numberButton);
         subtract.setOnClickListener(numberButton);
