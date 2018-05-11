@@ -18,6 +18,18 @@
                 android:hint="result"/>
         </TableRow>
         <TableRow>
+            <TextView
+                android:layout_weight="1"
+                android:hint="중간기록"
+                android:id="@+id/midResult"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/note"
+                android:layout_weight="1"
+                android:hint="전부 받아쓰는 곳"/>
+        </TableRow>
+        <TableRow>
             <Button
                 android:layout_weight="1"/>
             <Button
@@ -94,7 +106,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:layout_weight="1"/>
+                android:id="@+id/clear"
+                android:layout_weight="1"
+                android:text="C"/>
             <Button
                 android:layout_weight="1"
                 android:id="@+id/zero"
