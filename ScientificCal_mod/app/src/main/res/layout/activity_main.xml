@@ -66,6 +66,7 @@
                 android:layout_weight="1"
                 android:layout_marginLeft="20dp">
                 <Button
+                    android:id="@+id/taxSubtract"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/round_corner_yellow"
@@ -83,6 +84,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_weight="1">
                 <Button
+                    android:id="@+id/taxAdd"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/round_corner_yellow"
@@ -228,6 +230,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1">
                 <Button
+                    android:id="@+id/memoryRecall"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/round_corner_yellow"
@@ -245,6 +248,7 @@
                 android:layout_marginHorizontal="5dp"
                 android:layout_weight="1">
                 <Button
+                    android:id="@+id/memorySubtract"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/round_corner_yellow"
@@ -255,12 +259,14 @@
                     android:textSize="28dp"/>
             </LinearLayout>
             <LinearLayout
+
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/round_corner_white"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1">
                 <Button
+                    android:id="@+id/memoryAdd"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/round_corner_yellow"
