@@ -112,6 +112,7 @@
             android:orientation="horizontal"
             android:weightSum="5">
             <LinearLayout
+                android:visibility="invisible"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/round_corner_white"
@@ -187,6 +188,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1">
                 <Button
+                    android:id="@+id/grandTotal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/round_corner_yellow"
@@ -213,6 +215,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1">
                 <Button
+                    android:id="@+id/memoryClear"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/round_corner_yellow"

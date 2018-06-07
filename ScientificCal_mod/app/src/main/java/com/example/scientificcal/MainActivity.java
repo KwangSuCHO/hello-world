@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             three, four, five, six, seven, eight,
             nine, zero, doubleZero, clear, allClear,
             taxAdd, taxSubtract, memoryAdd, memorySubtract,
-            memoryRecall;
+            memoryRecall, memoryClear, grandTotal;
     ImageButton add, subtract, multiply, divide, equal, root, dot;
     TextView formula;
     FloatingActionButton fab;
@@ -31,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
     int count = 0;
     String midResult = "";
     Double taxRate = 10.0;
+    String grandTotalNumber = "0";
     boolean tax = false;
+    String memoryResult = "0";
     ArrayList<String> memoryNumber = new ArrayList<>();
     ArrayList<String> memoryOperator = new ArrayList<>();
     @Override
@@ -39,9 +41,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        grandTotal = findViewById(R.id.grandTotal);
         memoryAdd = findViewById(R.id.memoryAdd);
         memorySubtract = findViewById(R.id.memorySubtract);
         memoryRecall = findViewById(R.id.memoryRecall);
+        memoryClear = findViewById(R.id.memoryClear);
 
         taxAdd = findViewById(R.id.taxAdd);
         taxSubtract = findViewById(R.id.taxSubtract);
@@ -84,236 +88,112 @@ public class MainActivity extends AppCompatActivity {
                 operatorCount = 0;
                 switch (v.getId()) {
                     case R.id.one:
-                        if(tax == false) {
-                            if (operator != "") {
-                                if (count == 0) {
-                                    formula.setText("1");
-                                    count++;
-                                } else {
-                                    formula.append("1");
-                                }
-                            } else {
-                                formula.append("1");
-                            }
+                        if (count == 0) {
+                            formula.setText("1");
+                            count++;
                         } else {
-                            if (count == 0) {
-                                formula.setText("1");
-                                count++;
-                            } else {
-                                formula.append("1");
-                            }
+                            formula.append("1");
                         }
-
                         break;
                     case R.id.two:
-                        if(tax == false) {
-                            if (operator != "") {
-                                if (count == 0) {
-                                    formula.setText("2");
-                                    count++;
-                                } else {
-                                    formula.append("2");
-                                }
-                            } else {
-                                formula.append("2");
-                            }
-                        } else {
+
                             if (count == 0) {
                                 formula.setText("2");
                                 count++;
                             } else {
                                 formula.append("2");
                             }
-                        }
+
                         break;
                     case R.id.three:
-                        if(tax == false) {
-                            if (operator != "") {
-                                if (count == 0) {
-                                    formula.setText("3");
-                                    count++;
-                                } else {
-                                    formula.append("3");
-                                }
-                            } else {
-                                formula.append("3");
-                            }
-                        } else {
+
                             if (count == 0) {
                                 formula.setText("3");
                                 count++;
                             } else {
                                 formula.append("3");
                             }
-                        }
+
                         break;
                     case R.id.four:
-                        if(tax == false) {
-                            if (operator != "") {
-                                if (count == 0) {
-                                    formula.setText("4");
-                                    count++;
-                                } else {
-                                    formula.append("4");
-                                }
-                            } else {
-                                formula.append("4");
-                            }
-                        }else {
+
                             if (count == 0) {
                                 formula.setText("4");
                                 count++;
                             } else {
                                 formula.append("4");
                             }
-                        }
+
                         break;
                     case R.id.five:
-                        if(tax == false) {
-                            if (operator != "") {
-                                if (count == 0) {
-                                    formula.setText("5");
-                                    count++;
-                                } else {
-                                    formula.append("5");
-                                }
-                            } else {
-                                formula.append("5");
-                            }
-                        } else {
+
                             if (count == 0) {
                                 formula.setText("5");
                                 count++;
                             } else {
                                 formula.append("5");
                             }
-                        }
+
                         break;
                     case R.id.six:
-                        if(tax==false) {
-                            if (operator != "") {
-                                if (count == 0) {
-                                    formula.setText("6");
-                                    count++;
-                                } else {
-                                    formula.append("6");
-                                }
-                            } else {
-                                formula.append("6");
-                            }
-                        } else {
+
                             if (count == 0) {
                                 formula.setText("6");
                                 count++;
                             } else {
                                 formula.append("6");
                             }
-                        }
+
                         break;
                     case R.id.seven:
-                        if(tax == false) {
-                            if (operator != "") {
-                                if (count == 0) {
-                                    formula.setText("7");
-                                    count++;
-                                } else {
-                                    formula.append("7");
-                                }
-                            } else {
-                                formula.append("7");
-                            }
-                        } else {
+
                             if (count == 0) {
                                 formula.setText("7");
                                 count++;
                             } else {
                                 formula.append("7");
                             }
-                        }
+
                         break;
                     case R.id.eight:
-                        if(tax == false) {
-                            if (operator != "") {
-                                if (count == 0) {
-                                    formula.setText("8");
-                                    count++;
-                                } else {
-                                    formula.append("8");
-                                }
-                            } else {
-                                formula.append("8");
-                            }
-                        } else {
+
                             if (count == 0) {
                                 formula.setText("8");
                                 count++;
                             } else {
                                 formula.append("8");
                             }
-                        }
+
                         break;
                     case R.id.nine:
-                        if(tax == false) {
-                            if (operator != "") {
-                                if (count == 0) {
-                                    formula.setText("9");
-                                    count++;
-                                } else {
-                                    formula.append("9");
-                                }
-                            } else {
-                                formula.append("9");
-                            }
-                        } else {
+
                             if (count == 0) {
                                 formula.setText("9");
                                 count++;
                             } else {
                                 formula.append("9");
                             }
-                        }
+
                         break;
                     case R.id.zero:
-                        if(tax == false) {
-                            if (operator != "") {
-                                if (count == 0) {
-                                    formula.setText("0");
-                                    count++;
-                                } else {
-                                    formula.append("0");
-                                }
-                            } else {
-                                formula.append("0");
-                            }
-                        } else {
+
                             if (count == 0) {
                                 formula.setText("0");
                                 count++;
                             } else {
                                 formula.append("0");
                             }
-                        }
+
                         break;
                     case R.id.doubleZero:
-                        if(tax == false) {
-                            if (operator != "") {
-                                if (count == 0) {
-                                    formula.setText("00");
-                                    count++;
-                                } else {
-                                    formula.append("00");
-                                }
-                            } else {
-                                formula.append("00");
-                            }
-                        } else {
+
                             if (count == 0) {
                                 formula.setText("00");
                                 count++;
                             } else {
                                 formula.append("00");
                             }
-                        }
+
                         break;
                     case R.id.dot:
                         if (value.equals("")) {
@@ -401,6 +281,8 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             } else {
                                 taxRate = parseDouble(value);
+                                count = 0;
+                                operator = "";
                                 tax = false;
                                 Toast.makeText(MainActivity.this, "Tax Rate : "+ taxRate, Toast.LENGTH_SHORT).show();
                             }
@@ -424,52 +306,55 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String value = formula.getText().toString();
                 count = 0;
-                if (value.equals("")) {
-                    Toast.makeText(MainActivity.this, "숫자를 먼저 넣어야합니다.", Toast.LENGTH_SHORT).show();
-                } else {
-
-                    setResult(value);
-                    memoryNumber.add(midResult);
-                    memoryOperator.add("+");
-
-                    operatorCount = 0;
-                    //operator = "+";
-
-//                    if (operatorCount != 0) {
-//                        memoryOperator = "+";
-//                    } else {
-//                        setResult(value);
-//                    }
-//                    operatorCount++;
-//                    operator = "+";
-                }
+                setResult(value);
+                operator = "";
+                memoryResult = String.valueOf(parseDouble(memoryResult)+parseDouble(midResult));
             }
         });
 
         memorySubtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String value = formula.getText().toString();
+                count = 0;
+                setResult(value);
+                operator = "";
+                memoryResult = String.valueOf(parseDouble(memoryResult)-parseDouble(midResult));
             }
         });
         memoryRecall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String value = formula.getText().toString();
-                int memoryCount = memoryNumber.size();
-                String note = "";
-
-                for(int i = 0; i<memoryCount; i++){
-                    note.concat(memoryNumber.get(i)).concat(memoryOperator.get(i));
-                }
-                String replace = note.replace("+","!").replace("-","!");
-
-
-
-
+                formula.setText(String.valueOf(memoryResult));
                 count = 0;
+                operator="";
+//                String value = formula.getText().toString();
+//                int memoryCount = memoryNumber.size();
+//                String note = "";
+//
+//                for(int i = 0; i<memoryCount; i++){
+//                    note.concat(memoryNumber.get(i)).concat(memoryOperator.get(i));
+//                }
+//                String replace = note.replace("+","!").replace("-","!");
+//                count = 0;
+//
+//                operator = "";
+            }
+        });
 
-                operator = "";
+        memoryClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                memoryResult = "0";
+                grandTotalNumber = "0";
+            }
+        });
+
+        grandTotal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                formula.setText(grandTotalNumber);
+
             }
         });
 
@@ -492,7 +377,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String value = formula.getText().toString();
-                double result = parseDouble(value) / (1 - taxRate/100.0);
+                double result = parseDouble(value) * (1 - taxRate/100.0);
                 String transferResult = String.format("%.4f",result);
                 formula.setText(transferResult);
                 midResult = transferResult;
@@ -542,6 +427,8 @@ public class MainActivity extends AppCompatActivity {
                 count = 0;
                 setResult(value);
                 operator = "";
+
+                grandTotalNumber = String.valueOf(parseDouble(grandTotalNumber)+parseDouble(midResult));
             }
         });
 
@@ -561,6 +448,8 @@ public class MainActivity extends AppCompatActivity {
                 operator = "";
                 midResult = "";
                 count = 0;
+                memoryResult = "0";
+                grandTotalNumber = "0";
             }
         });
 
